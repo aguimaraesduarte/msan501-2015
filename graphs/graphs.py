@@ -25,16 +25,39 @@ def adjmatrix(adj):
     for i in range(n):
         order[adj.keys()[i]] = i
 
-    for key in adj.keys():
-        print adj[key]
+    for i in range(n):
+        node = adj.keys()[i]
+        node_index = order[node]
+        target_list = adj[node]
+        for j in range(len(target_list)):
+            target_index = order[target_list[j]]
+            m[node_index][target_index] = 1
 
-    print m
+    return m
+
+def nodes(adj, start_node):
+    # Walk every node in graph described by adj list starting at start_node
+    # using a breadth-first search. Return a list of all nodes found (in
+    # any order). Incllude the start_node.
+
+    #visited = []
+    #add the start node to a work list;
+    #while more work do
+        #node = remove a node from work list;
+        #add node to visited list;
+        #targets = adjacency_list[node];
+        #add all unvisited targets to work list;
+    #end
+    #return visted;
 
     return 0
 
 adj_list = "parrt: tombu, dmose, parrt\ntombu: dmose, kg9s\ndmose: tombu\nkg9s: dmose"
 adj_dict = adjlist(adj_list)
+adj_mat = adjmatrix(adj_dict)
+
+print adj_list
 print adj_dict
-print adjmatrix(adj_dict)
+print adj_mat
 
 
