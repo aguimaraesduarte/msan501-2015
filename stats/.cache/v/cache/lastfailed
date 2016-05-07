@@ -1,0 +1,5 @@
+{
+  "test_stats.py::test_exp": true, 
+  "test_stats.py::test_norm": true, 
+  "test_stats.py::test_norm01": true
+}
