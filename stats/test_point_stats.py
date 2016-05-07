@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=1020">
     
     
-    <title>msan501/test_stats.py at master · parrt/msan501</title>
+    <title>msan501-starterkit/test_point_stats.py at master · parrt/msan501-starterkit</title>
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -38,12 +38,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
     <meta property="fb:app_id" content="1401488693436528">
 
-      <meta content="https://avatars3.githubusercontent.com/u/178777?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="parrt/msan501" name="twitter:title" /><meta content="msan501 - USF MSAN501 lecture notes and sample code" name="twitter:description" />
-      <meta content="https://avatars3.githubusercontent.com/u/178777?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="parrt/msan501" property="og:title" /><meta content="https://github.com/parrt/msan501" property="og:url" /><meta content="msan501 - USF MSAN501 lecture notes and sample code" property="og:description" />
+      <meta content="https://avatars3.githubusercontent.com/u/178777?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="parrt/msan501-starterkit" name="twitter:title" /><meta content="msan501-starterkit - A starter kit with tests and skeleton code for the computational analytics boot camp, MSAN501, at the University of San Francisco." name="twitter:description" />
+      <meta content="https://avatars3.githubusercontent.com/u/178777?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="parrt/msan501-starterkit" property="og:title" /><meta content="https://github.com/parrt/msan501-starterkit" property="og:url" /><meta content="msan501-starterkit - A starter kit with tests and skeleton code for the computational analytics boot camp, MSAN501, at the University of San Francisco." property="og:description" />
       <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
     <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
     <link rel="assets" href="https://assets-cdn.github.com/">
-    <link rel="web-socket" href="wss://live.github.com/_sockets/MTg3MTAyNjA6NTdhZTlkMTBmMDQyYTNkMGZhZWFiZmY3NjlkMTQyYjI6NjhiNzc2Zjg0MjBmOWY3ZjAzNTQ3YTQ1NGY5MGIwOGZmZDIyY2Y3Y2NkMzRhNWI2NDcwYTUzYjI3ZmEyNzFlZg==--552084ba113ead43eb1739f4571c2a58f57e9d66">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTg3MTAyNjA6ZGZiMmE1Y2E5YjRjOTcwNDBhNTJhMmIwMzczMmIzNGU6MmE0MTI3Y2ZjOGUwOTdjNWM4NWY2YjJmOTgxZmY2Y2I3YWFmOWZjMGM1NGY1NmVkNTBhMTEwMzBkNDQ3YThmNg==--b93305679a32c31260cc3bacb26190143ea6950b">
     <meta name="pjax-timeout" content="1000">
     <link rel="sudo-modal" href="/sessions/sudo_modal">
 
@@ -55,7 +55,7 @@
 <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="BD3D2E27:32AE:5C84E31:572E116B" name="octolytics-dimension-request_id" /><meta content="18710260" name="octolytics-actor-id" /><meta content="aguimaraesduarte" name="octolytics-actor-login" /><meta content="96a488b013d7d70317a5df26f20160fcc25c0e238e545888a416d5acc8b42301" name="octolytics-actor-hash" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="BD3D2E27:3F22:7B05C29:572E137F" name="octolytics-dimension-request_id" /><meta content="18710260" name="octolytics-actor-id" /><meta content="aguimaraesduarte" name="octolytics-actor-login" /><meta content="96a488b013d7d70317a5df26f20160fcc25c0e238e545888a416d5acc8b42301" name="octolytics-actor-hash" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 
 
@@ -68,7 +68,7 @@
     <meta name="user-login" content="aguimaraesduarte">
 
         <meta name="expected-hostname" content="github.com">
-      <meta name="js-proxy-site-detection-payload" content="ZmIwNjhmZjUxZGZhOGQwY2FkMTBlNmYwNDdmMDFmNWRjMzZmZWJiMDNlODAxMjg5YjI2NDQ0MDE2Y2YyMGEyOHx7InJlbW90ZV9hZGRyZXNzIjoiMTg5LjYxLjQ2LjM5IiwicmVxdWVzdF9pZCI6IkJEM0QyRTI3OjMyQUU6NUM4NEUzMTo1NzJFMTE2QiIsInRpbWVzdGFtcCI6MTQ2MjYzNjkxMX0=">
+      <meta name="js-proxy-site-detection-payload" content="YjViNTQwNjYwOTc1Mzk5ZWZjYTY1M2Y5OWUwYmQzZmY1ZTU2YzUzZmQxNmEyZDQ3NjZkYjc4NjZkOWUxMGZkNXx7InJlbW90ZV9hZGRyZXNzIjoiMTg5LjYxLjQ2LjM5IiwicmVxdWVzdF9pZCI6IkJEM0QyRTI3OjNGMjI6N0IwNUMyOTo1NzJFMTM3RiIsInRpbWVzdGFtcCI6MTQ2MjYzNzQ0M30=">
 
 
       <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
@@ -80,14 +80,14 @@
     
 
       
-  <meta name="description" content="msan501 - USF MSAN501 lecture notes and sample code">
-  <meta name="go-import" content="github.com/parrt/msan501 git https://github.com/parrt/msan501.git">
+  <meta name="description" content="msan501-starterkit - A starter kit with tests and skeleton code for the computational analytics boot camp, MSAN501, at the University of San Francisco.">
+  <meta name="go-import" content="github.com/parrt/msan501-starterkit git https://github.com/parrt/msan501-starterkit.git">
 
-  <meta content="178777" name="octolytics-dimension-user_id" /><meta content="parrt" name="octolytics-dimension-user_login" /><meta content="21051783" name="octolytics-dimension-repository_id" /><meta content="parrt/msan501" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="21051783" name="octolytics-dimension-repository_network_root_id" /><meta content="parrt/msan501" name="octolytics-dimension-repository_network_root_nwo" />
-  <link href="https://github.com/parrt/msan501/commits/master.atom" rel="alternate" title="Recent Commits to msan501:master" type="application/atom+xml">
+  <meta content="178777" name="octolytics-dimension-user_id" /><meta content="parrt" name="octolytics-dimension-user_login" /><meta content="38637754" name="octolytics-dimension-repository_id" /><meta content="parrt/msan501-starterkit" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="38637754" name="octolytics-dimension-repository_network_root_id" /><meta content="parrt/msan501-starterkit" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/parrt/msan501-starterkit/commits/master.atom" rel="alternate" title="Recent Commits to msan501-starterkit:master" type="application/atom+xml">
 
 
-      <link rel="canonical" href="https://github.com/parrt/msan501/blob/master/labs/code/stats/test_stats.py" data-pjax-transient>
+      <link rel="canonical" href="https://github.com/parrt/msan501-starterkit/blob/master/stats/test_point_stats.py" data-pjax-transient>
   </head>
 
 
@@ -110,7 +110,7 @@
 
 
         <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
-  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501/search" class="js-site-search-form" data-scoped-search-url="/parrt/msan501/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501-starterkit/search" class="js-site-search-form" data-scoped-search-url="/parrt/msan501-starterkit/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
     <label class="form-control header-search-wrapper js-chromeless-input-container">
       <div class="header-search-scope">This repository</div>
       <input type="text"
@@ -176,9 +176,9 @@
 
   <div class="dropdown-divider"></div>
   <div class="dropdown-header">
-    <span title="parrt/msan501">This repository</span>
+    <span title="parrt/msan501-starterkit">This repository</span>
   </div>
-    <a class="dropdown-item" href="/parrt/msan501/issues/new" data-ga-click="Header, create new issue">
+    <a class="dropdown-item" href="/parrt/msan501-starterkit/issues/new" data-ga-click="Header, create new issue">
       New issue
     </a>
 
@@ -227,7 +227,7 @@
             Settings
           </a>
 
-          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+IlXpSl2ZR6h+yquU+Fb6UaMI50tCoTUQEdZRFY3y2pf8qILDImS0vhmJHYy89gDtG28YN0x93EvkGIXaLs9bw==" /></div>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="QvWrLz045z9HC1nY8I6rmusKoHq2XZbJwGYEKPVRwMkLE1KmSB9lFcjdGL7oDpUanda83AtK0kGx6JbfnrC37g==" /></div>
             <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
               Sign out
             </button>
@@ -264,10 +264,10 @@
 <ul class="pagehead-actions">
 
   <li>
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="OdLmJk3MlZnsrTOpAKNGMKIcGQyH+WSLI+UPJmapiIfPr7M4xQnZFoOAsstBBwWuOhJ8evTQELM+yDqQBckMUg==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="21051783" />
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="6o9lJ1ABGFzy+qHiV4h6jdKdsQRCmn0W6J1XjKYyYKwxwEvcyjagzKG48olpPIWyS2m6g7cdVQdCnXW+F5kZVQ==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="38637754" />
 
         <div class="select-menu js-menu-container js-select-menu">
-          <a href="/parrt/msan501/subscription"
+          <a href="/parrt/msan501-starterkit/subscription"
             class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true"
             data-ga-click="Repository, click Watch settings, action:blob#show">
             <span class="js-select-button">
@@ -275,8 +275,8 @@
               Watch
             </span>
           </a>
-          <a class="social-count js-social-count" href="/parrt/msan501/watchers">
-            6
+          <a class="social-count js-social-count" href="/parrt/msan501-starterkit/watchers">
+            2
           </a>
 
         <div class="select-menu-modal-holder">
@@ -339,47 +339,47 @@
     
   <div class="js-toggler-container js-social-container starring-container ">
 
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501/unstar" class="starred" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="GEA3vqYHQu3fCq+GRRgnwtiZsQBshVFt2xmWiF+dgQ3VpM3bEQ2IhFGC+uTzGSK13NPaXedArGRZNO6nWZP8eA==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501-starterkit/unstar" class="starred" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+ikcnkyFj001AroRspWqugH3mymzesVtMmipYMBlCuw33h47Nky4cVMOwg7MBsBzYd551e4Fu6PLSvTQB+3uyA==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Unstar this repository" title="Unstar parrt/msan501"
+        aria-label="Unstar this repository" title="Unstar parrt/msan501-starterkit"
         data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
         <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>
         Unstar
       </button>
-        <a class="social-count js-social-count" href="/parrt/msan501/stargazers">
-          6
+        <a class="social-count js-social-count" href="/parrt/msan501-starterkit/stargazers">
+          0
         </a>
 </form>
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501/star" class="unstarred" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="dzYQgMjTAG92YXLEj2gGhIXHdh2o1du3LgZXO4UwD4DNdz2EXwucH28u4/msbcZea8f12D4inMsC4CV9EGgzgw==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501-starterkit/star" class="unstarred" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Psc0il8HT5QPOoQHq+WIYpavJSci5IvAsGxUlkza2L1oR/x+MAeokRtkbVJZlYx/UfpBYw3svWN3O7aTibGdDg==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Star this repository" title="Star parrt/msan501"
+        aria-label="Star this repository" title="Star parrt/msan501-starterkit"
         data-ga-click="Repository, click star button, action:blob#show; text:Star">
         <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>
         Star
       </button>
-        <a class="social-count js-social-count" href="/parrt/msan501/stargazers">
-          6
+        <a class="social-count js-social-count" href="/parrt/msan501-starterkit/stargazers">
+          0
         </a>
 </form>  </div>
 
   </li>
 
   <li>
-          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501/fork" class="btn-with-count" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="6RkniEFfoPYFMG17Vw1SUkDRlsnlgqOnFWpwe9p/gBfUNHvIKvHsdDasXPXeeQWT58yh9BR34zXsLKKRnhd4Sg==" /></div>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501-starterkit/fork" class="btn-with-count" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="sWOH6ZP+aXO/Sa2UOK+/j5B/zDMUAQWzoA9PIDNCB4nHePRWMIoC4k+2CMXKn/fjyRRe8eoqafcG2QwdW4l3XA==" /></div>
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
                 data-ga-click="Repository, show fork modal, action:blob#show; text:Fork"
-                title="Fork your own copy of parrt/msan501 to your account"
-                aria-label="Fork your own copy of parrt/msan501 to your account">
+                title="Fork your own copy of parrt/msan501-starterkit to your account"
+                aria-label="Fork your own copy of parrt/msan501-starterkit to your account">
               <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path d="M8 1c-1.11 0-2 0.89-2 2 0 0.73 0.41 1.38 1 1.72v1.28L5 8 3 6v-1.28c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72v1.78l3 3v1.78c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V9.5l3-3V4.72c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2zM2 4.2c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3 10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3-10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
               Fork
             </button>
 </form>
-    <a href="/parrt/msan501/network" class="social-count">
-      22
+    <a href="/parrt/msan501-starterkit/network" class="social-count">
+      3
     </a>
   </li>
 </ul>
@@ -388,7 +388,7 @@
   <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 9h-1v-1h1v1z m0-3h-1v1h1v-1z m0-2h-1v1h1v-1z m0-2h-1v1h1v-1z m8-1v12c0 0.55-0.45 1-1 1H6v2l-1.5-1.5-1.5 1.5V14H1c-0.55 0-1-0.45-1-1V1C0 0.45 0.45 0 1 0h10c0.55 0 1 0.45 1 1z m-1 10H1v2h2v-1h3v1h5V11z m0-10H2v9h9V1z"></path></svg>
   <span class="author" itemprop="author"><a href="/parrt" class="url fn" rel="author">parrt</a></span><!--
 --><span class="path-divider">/</span><!--
---><strong itemprop="name"><a href="/parrt/msan501" data-pjax="#js-repo-pjax-container">msan501</a></strong>
+--><strong itemprop="name"><a href="/parrt/msan501-starterkit" data-pjax="#js-repo-pjax-container">msan501-starterkit</a></strong>
 
 </h1>
 
@@ -402,14 +402,14 @@
      data-pjax="#js-repo-pjax-container">
 
   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/parrt/msan501" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /parrt/msan501" itemprop="url">
+    <a href="/parrt/msan501-starterkit" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /parrt/msan501-starterkit" itemprop="url">
       <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M9.5 3l-1.5 1.5 3.5 3.5L8 11.5l1.5 1.5 4.5-5L9.5 3zM4.5 3L0 8l4.5 5 1.5-1.5L2.5 8l3.5-3.5L4.5 3z"></path></svg>
       <span itemprop="name">Code</span>
       <meta itemprop="position" content="1">
 </a>  </span>
 
     <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a href="/parrt/msan501/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /parrt/msan501/issues" itemprop="url">
+      <a href="/parrt/msan501-starterkit/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /parrt/msan501-starterkit/issues" itemprop="url">
         <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7S10.14 13.7 7 13.7 1.3 11.14 1.3 8s2.56-5.7 5.7-5.7m0-1.3C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7S10.86 1 7 1z m1 3H6v5h2V4z m0 6H6v2h2V10z"></path></svg>
         <span itemprop="name">Issues</span>
         <span class="counter">0</span>
@@ -417,23 +417,23 @@
 </a>    </span>
 
   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/parrt/msan501/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /parrt/msan501/pulls" itemprop="url">
+    <a href="/parrt/msan501-starterkit/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /parrt/msan501-starterkit/pulls" itemprop="url">
       <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M11 11.28c0-1.73 0-6.28 0-6.28-0.03-0.78-0.34-1.47-0.94-2.06s-1.28-0.91-2.06-0.94c0 0-1.02 0-1 0V0L4 3l3 3V4h1c0.27 0.02 0.48 0.11 0.69 0.31s0.3 0.42 0.31 0.69v6.28c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72z m-1 2.92c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2zM4 3c0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72 0 1.55 0 5.56 0 6.56-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V4.72c0.59-0.34 1-0.98 1-1.72z m-0.8 10c0 0.66-0.55 1.2-1.2 1.2s-1.2-0.55-1.2-1.2 0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2z m-1.2-8.8c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
       <span itemprop="name">Pull requests</span>
       <span class="counter">0</span>
       <meta itemprop="position" content="3">
 </a>  </span>
 
-    <a href="/parrt/msan501/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /parrt/msan501/wiki">
+    <a href="/parrt/msan501-starterkit/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /parrt/msan501-starterkit/wiki">
       <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M2 5h4v1H2v-1z m0 3h4v-1H2v1z m0 2h4v-1H2v1z m11-5H9v1h4v-1z m0 2H9v1h4v-1z m0 2H9v1h4v-1z m2-6v9c0 0.55-0.45 1-1 1H8.5l-1 1-1-1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h5.5l1 1 1-1h5.5c0.55 0 1 0.45 1 1z m-8 0.5l-0.5-0.5H1v9h6V3.5z m7-0.5H8.5l-0.5 0.5v8.5h6V3z"></path></svg>
       Wiki
 </a>
 
-  <a href="/parrt/msan501/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /parrt/msan501/pulse">
+  <a href="/parrt/msan501-starterkit/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /parrt/msan501-starterkit/pulse">
     <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0V10h3.6L4.5 8.2l0.9 5.4L9 8.5l1.6 1.5H14V8H11.5z"></path></svg>
     Pulse
 </a>
-  <a href="/parrt/msan501/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /parrt/msan501/graphs">
+  <a href="/parrt/msan501-starterkit/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /parrt/msan501-starterkit/graphs">
     <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M16 14v1H0V0h1v14h15z m-11-1H3V8h2v5z m4 0H7V3h2v10z m4 0H11V6h2v7z"></path></svg>
     Graphs
 </a>
@@ -448,9 +448,9 @@
 
     
 
-<a href="/parrt/msan501/blob/b0104bcd2a38c463a7c7246c895a53ca271cc89c/labs/code/stats/test_stats.py" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<a href="/parrt/msan501-starterkit/blob/db1a24183207f1d78db24e683fc318fc1c5b1e95/stats/test_point_stats.py" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
-<!-- blob contrib key: blob_contributors:v21:a8c3ac2dd90566aab7d7e1222809ce12 -->
+<!-- blob contrib key: blob_contributors:v21:79986a7bbfd358a8ad8b7b0b9187d46e -->
 
 <div class="file-navigation js-zeroclipboard-container">
   
@@ -492,7 +492,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/parrt/msan501/blob/master/labs/code/stats/test_stats.py"
+               href="/parrt/msan501-starterkit/blob/master/stats/test_point_stats.py"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -520,7 +520,7 @@
 </div>
 
   <div class="btn-group right">
-    <a href="/parrt/msan501/find/master"
+    <a href="/parrt/msan501-starterkit/find/master"
           class="js-pjax-capture-input btn btn-sm"
           data-pjax
           data-hotkey="t">
@@ -529,37 +529,60 @@
     <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
   </div>
   <div class="breadcrumb js-zeroclipboard-target">
-    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/parrt/msan501"><span>msan501</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/parrt/msan501/tree/master/labs"><span>labs</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/parrt/msan501/tree/master/labs/code"><span>code</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/parrt/msan501/tree/master/labs/code/stats"><span>stats</span></a></span><span class="separator">/</span><strong class="final-path">test_stats.py</strong>
+    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/parrt/msan501-starterkit"><span>msan501-starterkit</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/parrt/msan501-starterkit/tree/master/stats"><span>stats</span></a></span><span class="separator">/</span><strong class="final-path">test_point_stats.py</strong>
   </div>
 </div>
 
-<include-fragment class="commit-tease" src="/parrt/msan501/contributors/master/labs/code/stats/test_stats.py">
-  <div>
-    Fetching contributors&hellip;
+
+  <div class="commit-tease">
+      <span class="right">
+        <a class="commit-tease-sha" href="/parrt/msan501-starterkit/commit/7ad3b6f8e147a02fadf6db506ad9454937862e6d" data-pjax>
+          7ad3b6f
+        </a>
+        <relative-time datetime="2015-07-07T21:41:51Z">Jul 7, 2015</relative-time>
+      </span>
+      <div>
+        <img alt="@parrt" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/178777?v=3&amp;s=40" width="20" />
+        <a href="/parrt" class="user-mention" rel="author">parrt</a>
+          <a href="/parrt/msan501-starterkit/commit/7ad3b6f8e147a02fadf6db506ad9454937862e6d" class="message" data-pjax="true" title="update point stats test">update point stats test</a>
+      </div>
+
+    <div class="commit-tease-contributors">
+      <button type="button" class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box">
+        <strong>1</strong>
+         contributor
+      </button>
+      
+    </div>
+
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list" data-facebox-id="facebox-description">
+          <li class="facebox-user-list-item">
+            <img alt="@parrt" height="24" src="https://avatars2.githubusercontent.com/u/178777?v=3&amp;s=48" width="24" />
+            <a href="/parrt">parrt</a>
+          </li>
+      </ul>
+    </div>
   </div>
 
-  <div class="commit-tease-contributors">
-    <img alt="" class="loader-loading left" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
-    <span class="loader-error">Cannot retrieve contributors at this time</span>
-  </div>
-</include-fragment>
 <div class="file">
   <div class="file-header">
   <div class="file-actions">
 
     <div class="btn-group">
-      <a href="/parrt/msan501/raw/master/labs/code/stats/test_stats.py" class="btn btn-sm " id="raw-url">Raw</a>
-        <a href="/parrt/msan501/blame/master/labs/code/stats/test_stats.py" class="btn btn-sm js-update-url-with-hash">Blame</a>
-      <a href="/parrt/msan501/commits/master/labs/code/stats/test_stats.py" class="btn btn-sm " rel="nofollow">History</a>
+      <a href="/parrt/msan501-starterkit/raw/master/stats/test_point_stats.py" class="btn btn-sm " id="raw-url">Raw</a>
+        <a href="/parrt/msan501-starterkit/blame/master/stats/test_point_stats.py" class="btn btn-sm js-update-url-with-hash">Blame</a>
+      <a href="/parrt/msan501-starterkit/commits/master/stats/test_point_stats.py" class="btn btn-sm " rel="nofollow">History</a>
     </div>
 
 
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501/edit/master/labs/code/stats/test_stats.py" class="inline-form js-update-url-with-hash" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="knP62R7j1YaqhW67orH17xyWb4mGg6ZvZtpk+B3top5Tv4ky5bQXQRX8U2aqFDasPWAK6pkqBoU/ZcSy7zpZBA==" /></div>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501-starterkit/edit/master/stats/test_point_stats.py" class="inline-form js-update-url-with-hash" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="XIZh3AcN8l3WjY4zmJjgDI1cLtIwZFqgtZ2fmGh7IBIS3TiO/REWtuYRUAk827PQjr2cLvicXjJ5kL3sR7ptJQ==" /></div>
           <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M0 12v3h3l8-8-3-3L0 12z m3 2H1V12h1v1h1v1z m10.3-9.3l-1.3 1.3-3-3 1.3-1.3c0.39-0.39 1.02-0.39 1.41 0l1.59 1.59c0.39 0.39 0.39 1.02 0 1.41z"></path></svg>
           </button>
-</form>        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501/delete/master/labs/code/stats/test_stats.py" class="inline-form" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UrHaqijhMvmorud0gBJVnqOb+Xznf4R0ASejax0i5Zr9tmHHMcondTXcS7yVWZRJsIAuqm81Zrcy3a//A85LlA==" /></div>
+</form>        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/parrt/msan501-starterkit/delete/master/stats/test_point_stats.py" class="inline-form" data-form-nonce="df17be00e9e682406b55707c844a00fb8c7114b1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qnPA+W3OsyeowrDdtQEgEzu37oznlIS7p3CCa933mnHzxmyAUDPdIlR1B7592Aj62HAKmfagtM6H4E8K0uOZ/g==" /></div>
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and delete the file" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M10 2H8c0-0.55-0.45-1-1-1H4c-0.55 0-1 0.45-1 1H1c-0.55 0-1 0.45-1 1v1c0 0.55 0.45 1 1 1v9c0 0.55 0.45 1 1 1h7c0.55 0 1-0.45 1-1V5c0.55 0 1-0.45 1-1v-1c0-0.55-0.45-1-1-1z m-1 12H2V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9z m1-10H1v-1h9v1z"></path></svg>
@@ -567,9 +590,9 @@
 </form>  </div>
 
   <div class="file-info">
-      16 lines (12 sloc)
+      32 lines (26 sloc)
       <span class="file-info-divider"></span>
-    1.22 KB
+    1.64 KB
   </div>
 </div>
 
@@ -579,66 +602,132 @@
       <table class="highlight tab-size js-file-line-container" data-tab-size="8">
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">from</span> stats <span class="pl-k">import</span> <span class="pl-k">*</span></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> numpy <span class="pl-k">as</span> np  <span class="pl-c"># np is an alias for the numpy library</span></td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">from</span> stats <span class="pl-k">import</span> <span class="pl-k">*</span></td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Alabama, Alaska, ..., Wyoming alchohol consumption</span></td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line">beer_per_cap <span class="pl-k">=</span> [<span class="pl-c1">21.94</span>, <span class="pl-c1">22</span>, <span class="pl-c1">24.19</span>, <span class="pl-c1">19.58</span>, <span class="pl-c1">19.04</span>, <span class="pl-c1">23.31</span>, <span class="pl-c1">16.94</span>, <span class="pl-c1">25.43</span>, <span class="pl-c1">23.93</span>, <span class="pl-c1">20.26</span>, <span class="pl-c1">24.12</span>, <span class="pl-c1">20.86</span>, <span class="pl-c1">22.2</span>, <span class="pl-c1">19.97</span>, <span class="pl-c1">25.02</span>, <span class="pl-c1">21.12</span>, <span class="pl-c1">19.06</span>, <span class="pl-c1">26.4</span>, <span class="pl-c1">23.25</span>, <span class="pl-c1">18.45</span>, <span class="pl-c1">20.12</span>, <span class="pl-c1">20.59</span>, <span class="pl-c1">21.8</span>, <span class="pl-c1">25.09</span>, <span class="pl-c1">23.79</span>, <span class="pl-c1">30.3</span>, <span class="pl-c1">25.63</span>, <span class="pl-c1">30.62</span>, <span class="pl-c1">31.61</span>, <span class="pl-c1">17.23</span>, <span class="pl-c1">26.15</span>, <span class="pl-c1">16.84</span>, <span class="pl-c1">21.2</span>, <span class="pl-c1">30.41</span>, <span class="pl-c1">23.41</span>, <span class="pl-c1">20.3</span>, <span class="pl-c1">22.61</span>, <span class="pl-c1">22.08</span>, <span class="pl-c1">20.56</span>, <span class="pl-c1">25.87</span>, <span class="pl-c1">26.88</span>, <span class="pl-c1">21.03</span>, <span class="pl-c1">25.42</span>, <span class="pl-c1">12.67</span>, <span class="pl-c1">23.42</span>, <span class="pl-c1">21</span>, <span class="pl-c1">20.12</span>, <span class="pl-c1">23.34</span>, <span class="pl-c1">27.52</span>, <span class="pl-c1">26.5</span>]</td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Alabama, Alaska, ..., Wyoming alchohol consumption</span></td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line">wine_per_cap <span class="pl-k">=</span> [<span class="pl-c1">1.24238268</span>, <span class="pl-c1">2.552182</span>, <span class="pl-c1">2.145361</span>, <span class="pl-c1">0.94119689</span>, <span class="pl-c1">3.1935822</span>, <span class="pl-c1">2.4987453</span>, <span class="pl-c1">3.360638</span>, <span class="pl-c1">3.519633</span>, <span class="pl-c1">2.9281906</span>, <span class="pl-c1">1.5588692</span>, <span class="pl-c1">3.0396061</span>, <span class="pl-c1">2.1405284</span>, <span class="pl-c1">2.1986082</span>, <span class="pl-c1">1.3979203</span>, <span class="pl-c1">0.9813412</span>, <span class="pl-c1">0.94928628</span>, <span class="pl-c1">0.97898253</span>, <span class="pl-c1">1.5799767</span>, <span class="pl-c1">2.6431797</span>, <span class="pl-c1">2.0777099</span>, <span class="pl-c1">3.6961575</span>, <span class="pl-c1">1.7342842</span>, <span class="pl-c1">1.8754873</span>, <span class="pl-c1">0.70148546</span>, <span class="pl-c1">1.6677339</span>, <span class="pl-c1">2.1428993</span>, <span class="pl-c1">1.1796579</span>, <span class="pl-c1">3.8256018</span>, <span class="pl-c1">4.4116669</span>, <span class="pl-c1">3.2394561</span>, <span class="pl-c1">1.7459815</span>, <span class="pl-c1">2.6410147</span>, <span class="pl-c1">1.6767241</span>, <span class="pl-c1">1.15415267</span>, <span class="pl-c1">1.4621656</span>, <span class="pl-c1">0.99553168</span>, <span class="pl-c1">3.0251772</span>, <span class="pl-c1">1.41815774</span>, <span class="pl-c1">3.2586038</span>, <span class="pl-c1">1.4748841</span>, <span class="pl-c1">1.06093604</span>, <span class="pl-c1">1.15305843</span>, <span class="pl-c1">1.3476804</span>, <span class="pl-c1">0.79689661</span>, <span class="pl-c1">3.7446437</span>, <span class="pl-c1">2.2460391</span>, <span class="pl-c1">2.9223839</span>, <span class="pl-c1">0.66951223</span>, <span class="pl-c1">1.9217346</span>, <span class="pl-c1">1.3835459</span>]</td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line">beer_per_cap <span class="pl-k">=</span> [<span class="pl-c1">21.94</span>, <span class="pl-c1">22</span>, <span class="pl-c1">24.19</span>, <span class="pl-c1">19.58</span>, <span class="pl-c1">19.04</span>, <span class="pl-c1">23.31</span>, <span class="pl-c1">16.94</span>, <span class="pl-c1">25.43</span>, <span class="pl-c1">23.93</span>, <span class="pl-c1">20.26</span>, <span class="pl-c1">24.12</span>,</td>
       </tr>
       <tr>
         <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">&quot;</span>mean(beer) =<span class="pl-pds">&quot;</span></span>, mean(beer_per_cap)</td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">20.86</span>, <span class="pl-c1">22.2</span>, <span class="pl-c1">19.97</span>, <span class="pl-c1">25.02</span>, <span class="pl-c1">21.12</span>, <span class="pl-c1">19.06</span>, <span class="pl-c1">26.4</span>, <span class="pl-c1">23.25</span>, <span class="pl-c1">18.45</span>, <span class="pl-c1">20.12</span>, <span class="pl-c1">20.59</span>,</td>
       </tr>
       <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">&quot;</span>var(beer) =<span class="pl-pds">&quot;</span></span>, var(beer_per_cap)</td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">21.8</span>, <span class="pl-c1">25.09</span>, <span class="pl-c1">23.79</span>, <span class="pl-c1">30.3</span>, <span class="pl-c1">25.63</span>, <span class="pl-c1">30.62</span>, <span class="pl-c1">31.61</span>, <span class="pl-c1">17.23</span>, <span class="pl-c1">26.15</span>, <span class="pl-c1">16.84</span>, <span class="pl-c1">21.2</span>,</td>
       </tr>
       <tr>
         <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">30.41</span>, <span class="pl-c1">23.41</span>, <span class="pl-c1">20.3</span>, <span class="pl-c1">22.61</span>, <span class="pl-c1">22.08</span>, <span class="pl-c1">20.56</span>, <span class="pl-c1">25.87</span>, <span class="pl-c1">26.88</span>, <span class="pl-c1">21.03</span>, <span class="pl-c1">25.42</span>,</td>
       </tr>
       <tr>
         <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">&quot;</span>mean(wine) =<span class="pl-pds">&quot;</span></span>, mean(wine_per_cap)</td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">12.67</span>, <span class="pl-c1">23.42</span>, <span class="pl-c1">21</span>, <span class="pl-c1">20.12</span>, <span class="pl-c1">23.34</span>, <span class="pl-c1">27.52</span>, <span class="pl-c1">26.5</span>]</td>
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">&quot;</span>var(wine) =<span class="pl-pds">&quot;</span></span>, var(wine_per_cap)</td>
-      </tr>
-      <tr>
-        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line">
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
       <tr>
+        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line">wine_per_cap <span class="pl-k">=</span> [<span class="pl-c1">1.24238268</span>, <span class="pl-c1">2.552182</span>, <span class="pl-c1">2.145361</span>, <span class="pl-c1">0.94119689</span>, <span class="pl-c1">3.1935822</span>, <span class="pl-c1">2.4987453</span>,</td>
+      </tr>
+      <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line">x <span class="pl-k">=</span> [<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>]</td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">3.360638</span>, <span class="pl-c1">3.519633</span>, <span class="pl-c1">2.9281906</span>, <span class="pl-c1">1.5588692</span>, <span class="pl-c1">3.0396061</span>, <span class="pl-c1">2.1405284</span>, <span class="pl-c1">2.1986082</span>,</td>
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line">y <span class="pl-k">=</span> [<span class="pl-c1">1</span>,<span class="pl-c1">2.5</span>,<span class="pl-c1">3.1</span>]</td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">1.3979203</span>, <span class="pl-c1">0.9813412</span>, <span class="pl-c1">0.94928628</span>, <span class="pl-c1">0.97898253</span>, <span class="pl-c1">1.5799767</span>, <span class="pl-c1">2.6431797</span>,</td>
       </tr>
       <tr>
         <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">print</span></td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">2.0777099</span>, <span class="pl-c1">3.6961575</span>, <span class="pl-c1">1.7342842</span>, <span class="pl-c1">1.8754873</span>, <span class="pl-c1">0.70148546</span>, <span class="pl-c1">1.6677339</span>,</td>
       </tr>
       <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">&quot;</span>covariance = <span class="pl-pds">&quot;</span></span>, cov(beer_per_cap, wine_per_cap)</td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">2.1428993</span>, <span class="pl-c1">1.1796579</span>, <span class="pl-c1">3.8256018</span>, <span class="pl-c1">4.4116669</span>, <span class="pl-c1">3.2394561</span>, <span class="pl-c1">1.7459815</span>,</td>
+      </tr>
+      <tr>
+        <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">2.6410147</span>, <span class="pl-c1">1.6767241</span>, <span class="pl-c1">1.15415267</span>, <span class="pl-c1">1.4621656</span>, <span class="pl-c1">0.99553168</span>, <span class="pl-c1">3.0251772</span>,</td>
+      </tr>
+      <tr>
+        <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">1.41815774</span>, <span class="pl-c1">3.2586038</span>, <span class="pl-c1">1.4748841</span>, <span class="pl-c1">1.06093604</span>, <span class="pl-c1">1.15305843</span>, <span class="pl-c1">1.3476804</span>,</td>
+      </tr>
+      <tr>
+        <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">0.79689661</span>, <span class="pl-c1">3.7446437</span>, <span class="pl-c1">2.2460391</span>, <span class="pl-c1">2.9223839</span>, <span class="pl-c1">0.66951223</span>, <span class="pl-c1">1.9217346</span>,</td>
+      </tr>
+      <tr>
+        <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">1.3835459</span>]</td>
+      </tr>
+      <tr>
+        <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">test_mean</span>():</td>
+      </tr>
+      <tr>
+        <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">assert</span> np.isclose(mean(beer_per_cap),np.mean(beer_per_cap))</td>
+      </tr>
+      <tr>
+        <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">assert</span> np.isclose(mean(wine_per_cap),np.mean(wine_per_cap))</td>
+      </tr>
+      <tr>
+        <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">test_var</span>():</td>
+      </tr>
+      <tr>
+        <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">assert</span> np.isclose(var(beer_per_cap),np.var(beer_per_cap,<span class="pl-v">ddof</span><span class="pl-k">=</span><span class="pl-c1">1</span>))</td>
+      </tr>
+      <tr>
+        <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">assert</span> np.isclose(var(wine_per_cap),np.var(wine_per_cap,<span class="pl-v">ddof</span><span class="pl-k">=</span><span class="pl-c1">1</span>))</td>
+      </tr>
+      <tr>
+        <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">test_cov</span>():</td>
+      </tr>
+      <tr>
+        <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">COV</span> <span class="pl-k">=</span> np.cov(beer_per_cap,wine_per_cap)</td>
+      </tr>
+      <tr>
+        <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">assert</span> np.isclose(cov(beer_per_cap, wine_per_cap),<span class="pl-c1">COV</span>[<span class="pl-c1">0</span>,<span class="pl-c1">1</span>])</td>
       </tr>
 </table>
 
@@ -679,7 +768,7 @@
       <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2016 <span title="0.09248s from github-fe156-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2016 <span title="0.09783s from github-fe158-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
