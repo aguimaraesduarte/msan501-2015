@@ -35,29 +35,59 @@ def adjmatrix(adj):
 
     return m
 
-def nodes(adj, start_node):
+def nodes (adj, start_node):
     # Walk every node in graph described by adj list starting at start_node
     # using a breadth-first search. Return a list of all nodes found (in
     # any order). Incllude the start_node.
+    adj_dict = adjlist(adj)
 
-    #visited = []
-    #add the start node to a work list;
-    #while more work do
-        #node = remove a node from work list;
-        #add node to visited list;
-        #targets = adjacency_list[node];
-        #add all unvisited targets to work list;
-    #end
-    #return visted;
+    visited = []
+    work_list = [start_node]
 
-    return 0
+    while work_list:
+        node = work_list.pop(0)
+        if node not in visited:
+            visited.append(node)
+            work_list.extend(list(set(adj_dict[node])-set(visited)))
+
+    return visited
+
+def gendot(adj):
+    # Return a string representing the graph in Graphviz DOT format.
+    # with all p->q edges. Parameter adj in an adjacency list.
+    adj_dict = adjlist(adj)
+
+    graph = ""
+    graph += "digraph g {\n"
+    graph += "\trankdir=LR;\n"
+
+    for key in adj_dict.keys():
+        targets = adj_dict[key]
+        for i in range(len(targets)):
+            graph += "\t" + key + " -> " + targets[i] + ";\n"
+
+    graph += "}"
+
+    return graph
+
 
 adj_list = "parrt: tombu, dmose, parrt\ntombu: dmose, kg9s\ndmose: tombu\nkg9s: dmose"
+#adj_list = \
+#"""
+#parrt: tombu, dmose, parrt
+#tombu: dmose, kg9s
+#dmose: tombu
+#kg9s: dmose
+#"""
 adj_dict = adjlist(adj_list)
 adj_mat = adjmatrix(adj_dict)
+visited = nodes(adj_list, 'parrt')
+dot = gendot(adj_list)
 
-print adj_list
-print adj_dict
-print adj_mat
+#print adj_list
+#print adj_dict
+#print adj_mat
+#print visited
+print dot
 
 
