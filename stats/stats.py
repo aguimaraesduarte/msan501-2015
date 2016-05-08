@@ -1,4 +1,5 @@
 import scipy.misc as misc
+import math
 
 def mean(x):
     s = 0
@@ -55,3 +56,12 @@ def binom(n, k, p):
     # If we run n trials with p prob for each trial of success,
     # what is probability of having k successes? You can use scipy.misc.comb() if you want.
     return misc.comb(n,k) * p**k * (1.0-p)**(n-k)
+
+def rexp(lambduh): # lambduh mispelled to avoid clash with lambda in python
+    # u = get value from U(0,1) then
+    # return F^-1(u) for exp cdf F^-1
+    u = runif01()
+    return -math.log(1 - u)/lambduh
+
+def exppdf(x, lambduh):
+    return lambduh * math.exp(-lambduh * x)
