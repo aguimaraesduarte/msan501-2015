@@ -65,3 +65,14 @@ def rexp(lambduh): # lambduh mispelled to avoid clash with lambda in python
 
 def exppdf(x, lambduh):
     return lambduh * math.exp(-lambduh * x)
+
+def unifvar(a, b):
+    return ((b-a)**2.0)/12.0
+
+def normpdf(x, mu, sigma): # sigma is the standard deviation, sigma^2 is the variance
+    # Accept either a floating-point number or a numpy ndarray, such as what you get
+    # from arrange(). You do not need a loop in the code does not change here
+    # because 2 * ndarray is another ndarray automatically. In this respect,
+    # numpy is very convenient and behaves like R.
+
+    return 1.0/(sigma * math.sqrt(2 * math.pi)) * math.exp(-((x-mu)**2)/(2*sigma**2))

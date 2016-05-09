@@ -19,5 +19,5 @@ plt.axis([150,250,0,.05]) # set the axes so that we get a close-up
 plt.text(160,0.04, '$n = %d$' % n, fontsize=16)
 plt.text(160,0.037, '$p = %f$' % p, fontsize=16)
 plt.text(160,0.034, '$SAMPLES = %d$' % samples, fontsize=16)
-plt.savefig('binom_500_0.4.pdf', format="pdf")
+plt.savefig('binom-%d-%.1f.pdf' % (n, p), format="pdf")
 plt.show()
