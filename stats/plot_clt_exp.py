@@ -6,20 +6,20 @@ import numpy as np
 
 setseed( int(round(time.time() * 1000)) )
 
-N = 10
+N = 50
 TRIALS = 4000
 LAMBDUH = 1.5
 
 X = [[rexp(LAMBDUH) for n in range(N)] for t in range(TRIALS)]
 X_ = [mean(X[i]) for i in range(TRIALS)]
 
-inc = [x for x in np.linspace(0, 1, TRIALS)]
-Y = [normpdf(x, LAMBDUH**(-1.0), math.sqrt((LAMBDUH**(-2.0))/N)) for x in inc]
+x = np.arange(min(X_), max(X_), 0.01)
+Y = normpdf(x, LAMBDUH**(-1.0), math.sqrt((LAMBDUH**(-2.0))/N))
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
 plt.hist(X_, bins=40, normed=1)
-plt.plot(inc, Y, color='red')
+plt.plot(x, Y, color='red')
 
 plt.text(.02,.9, '$N = %d$' % N, transform = ax.transAxes)
 plt.text(.02,.85, '$TRIALS = %d$' % TRIALS, transform = ax.transAxes)

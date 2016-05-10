@@ -1,5 +1,6 @@
 import scipy.misc as misc
 import math
+import numpy as np
 
 def mean(x):
     s = 0
@@ -71,8 +72,15 @@ def unifvar(a, b):
 
 def normpdf(x, mu, sigma): # sigma is the standard deviation, sigma^2 is the variance
     # Accept either a floating-point number or a numpy ndarray, such as what you get
-    # from arrange(). You do not need a loop in the code does not change here
+    # from arange(). You do not need a loop in the code does not change here
     # because 2 * ndarray is another ndarray automatically. In this respect,
     # numpy is very convenient and behaves like R.
+    if isinstance(x, np.ndarray):
+        return [1.0/(sigma * math.sqrt(2 * math.pi)) * math.exp(-((i-mu)**2)/(2*sigma**2.0)) for i in x]
+    else:
+        return 1.0/(sigma * math.sqrt(2 * math.pi)) * math.exp(-((x-mu)**2)/(2*sigma**2.0))
 
-    return 1.0/(sigma * math.sqrt(2 * math.pi)) * math.exp(-((x-mu)**2)/(2*sigma**2))
+def rnorm01():
+    # Return a value from N(0,1)
+
+    return 0

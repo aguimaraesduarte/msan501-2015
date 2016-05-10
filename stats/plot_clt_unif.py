@@ -12,14 +12,14 @@ TRIALS = 2000
 X = [[runif01() for n in range(N)] for t in range(TRIALS)]
 X_ = [mean(X[i]) for i in range(TRIALS)]
 
-inc = [x for x in np.linspace(0, 1, TRIALS)]
-Y = [normpdf(x, 0.5, math.sqrt(1.0/(12*N))) for x in inc]
+x = np.arange(min(X_), max(X_), 0.01)
+Y = normpdf(x, 0.5, math.sqrt(1.0/(12*N)))
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
 plt.hist(X_, bins=40, normed=1)
 plt.axis([0.1, 0.9, 0, 7])
-plt.plot(inc, Y, color='red')
+plt.plot(x, Y, color='red')
 
 plt.text(.02,.9, '$N = %d$' % N, transform = ax.transAxes)
 plt.text(.02,.85,'$TRIALS = %d$' % TRIALS, transform = ax.transAxes)
