@@ -1,6 +1,7 @@
 import scipy.misc as misc
 import math
 import numpy as np
+import matplotlib.pyplot as plt
 
 def mean(x):
     s = 0
@@ -82,5 +83,18 @@ def normpdf(x, mu, sigma): # sigma is the standard deviation, sigma^2 is the var
 
 def rnorm01():
     # Return a value from N(0,1)
+    N = 100
 
-    return 0
+    X = [runif01() for i in range(N)]
+    X_ = mean(X)
+    rv = X_ - 0.5
+    rv /= math.sqrt(var(X)/N)
+
+    return rv
+
+def rnorm(mean, variance):
+    # Return a value from N(mean, variance)
+    Z = rnorm01()
+    X = Z * math.sqrt(variance) + mean
+
+    return X
