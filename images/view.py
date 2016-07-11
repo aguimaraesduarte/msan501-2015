@@ -1,6 +1,5 @@
 import sys
 from PIL import Image
-import cv2
 
 if len(sys.argv) != 2:
     print "$ python view.py imageFilename"
