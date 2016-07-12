@@ -46,9 +46,9 @@ print "p-value (t-test) = %f" % p
 
 TRIALS = 5000
 X = [[rnorm(20.0, variance) for i in range(n)] for j in range(TRIALS)]
-X_ = [mean(X[i]) for i in range(TRIALS)]
+X_ = [np.mean(X[i]) for i in range(TRIALS)]
 #greater = np.sum(X_ >= np.mean(tips))
-greater = sum([x >= mean(tips) for x in X_])
+greater = sum([x >= np.mean(tips) for x in X_])
 p2 = (2.0 * greater)/TRIALS
 
 print "p-value (bootstrap) = %f" % p2
